@@ -1,15 +1,25 @@
 "use client";
-import React, { useContext } from "react";
-import { PRODUCTS } from "../shop/product";
+
+import React, { useContext, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { PRODUCTS } from "../shop/products";
 import { ShopContext } from "../context/shop-context";
 import { CartItem } from "./cart-item";
-//import { useNavigate } from "react-router-dom";
 
 const Page = () => {
   const { cartItems, getTotalCartAmount } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
+  const router = useRouter();
 
-  const navigate = useNavigate();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="flex flex-col justify-center items-center">
@@ -29,7 +39,7 @@ const Page = () => {
           <p>Subtotal: ${totalAmount}</p>
           <button
             className="w-[150px] h-[50px] bg-black text-white border-none rounded-lg m-2 cursor-pointer"
-            onClick={() => navigate("/")}
+            onClick={() => router.push("/")}
           >
             Continue Shopping
           </button>
