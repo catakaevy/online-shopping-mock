@@ -119,7 +119,7 @@ const ContactSection = () => {
         {
           // If the email was submitted successfully, show a success message.
           emailSubmitted && (
-            <p className="text-green-500 text-sm mt-2">
+            <p className="text-orange-500 text-sm mt-2">
               Email sent successfully!
             </p>
           )
