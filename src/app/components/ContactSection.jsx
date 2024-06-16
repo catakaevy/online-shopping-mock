@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { IconContext } from "react-icons";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { FaFacebook } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 const ContactSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -45,13 +49,31 @@ const ContactSection = () => {
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
+        <p className="text-white mb-4 max-w-md">
           {" "}
-          I am currently looking for new opportunities, my inbox is always open.
-          Whether you have a question or just want to say hi, I will try my best
-          to get back to you.
+          We are active on social media, broadcasting news about Takoyaki in
+          Latvia. We frequently offer discount events, so don’t miss these
+          opportunities! <br /> If you have any questions or interests for our
+          events, feel free to contact us via email here!
         </p>
-        <h5 className="text-xl font-bold text-white my-2">Location</h5>
+        <div className="flex flex-row space-x-2">
+          <Link href="https://www.lu.lv/en/">
+            <IconContext.Provider value={{ color: "white", size: "40px" }}>
+              <AiOutlineInstagram />
+            </IconContext.Provider>
+          </Link>
+          <Link href="https://www.lu.lv/en/">
+            <IconContext.Provider value={{ color: "white", size: "40px" }}>
+              <FaFacebook />
+            </IconContext.Provider>
+          </Link>
+          <Link href="https://www.lu.lv/en/">
+            <IconContext.Provider value={{ color: "white", size: "40px" }}>
+              <FaSquareXTwitter />
+            </IconContext.Provider>
+          </Link>
+        </div>
+        <h5 className="text-xl mt-8 font-bold text-white my-2">Location</h5>
         <iframe
           width="450"
           height="250"
@@ -119,7 +141,7 @@ const ContactSection = () => {
         {
           // If the email was submitted successfully, show a success message.
           emailSubmitted && (
-            <p className="text-orange-500 text-sm mt-2">
+            <p className="text-white-500 bold text-sm mt-2">
               Email sent successfully!
             </p>
           )
