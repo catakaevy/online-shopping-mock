@@ -1,30 +1,54 @@
 import React from "react";
 import Image from "next/image";
+import ProductCard from "./ProductCard";
 
 const MenuData = [
   {
     id: 1,
-    name: "Takoyaki(plane)",
-    description: "",
-    price: "5",
+    name: "Takoyaki",
+    description:
+      "The skin is crispy, the inside is soft, and the octopus is plump. Signature takoyaki is absolutely delicious!!",
+    price: "3.44",
+    image: "/images/product/1takoyaki.png",
   },
   {
     id: 2,
-    name: "Takoyaki(cheese)",
-    description: "",
-    price: "6.5",
+    name: "Teritama",
+    description:
+      "The piping hot takoyaki is topped with a generous amount of our special teriyaki sauce and fresh egg salad made in-house. A rich and tasty takoyaki that is very satisfying to eat.",
+    price: "4.04",
+    image: "/images/product/2teritama.png",
   },
   {
     id: 3,
-    name: "Takoyaki(chili source)",
-    description: "",
-    price: "6.5",
+    name: "Negidako",
+    description:
+      "This refreshing Japanese-style takoyaki is made by topping hot takoyaki with fresh, crunchy spring onions and dipping it in the special tempura sauce that comes with it.",
+    price: "4.04",
+    image: "/images/product/3negidako.png",
   },
   {
     id: 4,
-    name: "Takoyaki(garlic source)",
-    description: "",
-    price: "6.5",
+    name: "Cheese Mentai",
+    description:
+      "Hot takoyaki topped with a generous amount of special mentaiko mayonnaise made with Hakata mentaiko and two types of cheese (Parmesan and mozzarella). These takoyaki are popular for their rich flavor.",
+    price: "4.04",
+    image: "/images/product/4cheesementai.png",
+  },
+  {
+    id: 5,
+    name: "Family Pack (16 pieces)",
+    description:
+      "Absolutely delicious!! Get even more value for your money on takoyaki!",
+    price: "6.83",
+    image: "/images/product/5_16takoyakiset.png",
+  },
+  {
+    id: 6,
+    name: "Danran Pack (24 pieces)",
+    description: "Absolutely delicious!! Let's all enjoy takoyaki!",
+    price: "9.97",
+    image: "/images/product/6_24takoyakiset.png",
   },
 ];
 
@@ -53,22 +77,17 @@ const MenuSection = () => {
         <div className="text-purple-200">test</div>
       </div>
 
-      <p className="text-black py-5">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia ullam et
-        ab, natus dolorum eveniet doloremque in voluptas ad porro dolores
-        tenetur itaque ipsam temporibus perferendis? Cum corporis illum
-        possimus! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Expedita enim consequuntur, magnam ipsum deleniti blanditiis provident,
-        odio perferendis veritatis culpa itaque nemo at dolores dolorem quos,
-        repudiandae doloribus corrupti quam? Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Fugit repellat dolore cupiditate, quis
-        perferendis numquam corrupti neque. Accusamus ullam odio consequatur.
-        Quo asperiores quibusdam alias sint eveniet possimus architecto
-        assumenda. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Nobis debitis officia voluptatum fugit illo doloremque sunt nostrum
-        perspiciatis nulla. A sunt harum ab veritatis tempore placeat laboriosam
-        est quaerat possimus!
-      </p>
+      <div className="grid md:grid-cols-3 gap-8 md:gap-12 py-5">
+        {MenuData.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            image={product.image}
+          />
+        ))}
+      </div>
     </section>
   );
 };
