@@ -43,17 +43,15 @@ const HeroSection = async () => {
               on great deals. If you haven&apos;t registered yet, don&apos;t
               wait!
             </p>
-            <div className="col-span-5 mt-5 mb-6 lg:mt-0">
-              <Image
-                src="/images/sakura_wood_fubuki_6765.png"
-                alt="hero image"
-                className=""
-                width={250}
-                height={250}
-              />
-            </div>
+            {/* <Image
+              src="/images/sakura_wood_fubuki_6765.png"
+              alt="hero image"
+              className=""
+              width={250}
+              height={250}
+            /> */}
           </div>
-          <div className="mb-5 flex flex-row">
+          <div className="mb-5">
             {session ? (
               <form action={signOut}>
                 <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 font-semibold text-white">
