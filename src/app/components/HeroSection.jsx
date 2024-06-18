@@ -63,7 +63,7 @@ const HeroSection = async () => {
                 <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 font-semibold text-white">
                   <Link href="/login">Sign In</Link>
                 </button>
-                <button className="px-1 py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 font-semibold text-black mt-3">
+                <button className="px-1 py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 font-semibold text-white mt-3">
                   <Link href="/signup">
                     <span className="block bg-pink-300 hover:bg-pink-200 rounded-full px-5 py-2">
                       Sign Up
